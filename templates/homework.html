@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    Homework
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5 text-center">
+        <h1><mark class="bg-primary"> Homework 📝 </mark></h1>
+        <div style="overflow-x:auto;">
+            <table class="table table-light mt-5 p-n5 align-middle">
+                <thead>
+                    <tr class="text-primary">
+                        <th>Subject</th>
+                        <th>Materials Required</th>
+                        <th>Description</th>
+                        <th>Deadline</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for each in homework %}
+                    <tr>
+                        <td>{{ each["subject"] }}</td>
+                        <td>{{ each["materials_required"]}}</td>
+                        <td>{{ each["description"] }}</td>
+                        <td>{{ each["deadline"] }}</td>
+                        <td>
+                            <form action="/completed" method="post" class="mx-2">
+                                <input name="id" value={{ each["id"] }} type="hidden">
+                                <button class="btn btn-success" type="submit">&#10003;</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a class="btn btn-primary mt-3" href="addHomework" role="button">Add Homework</a>
+    </main>
+{% endblock %}

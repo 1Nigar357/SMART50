@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Homework
+{% endblock %}
+
+{% block main %}
+    <br>
+    <h1 style="color:white;font-size: 4vw;">Add Homework 🎯</h1>
+    
+    <br>
+    <div>
+       <form action="/addHomework" method="post" id="form">
+            <div class="mb-3">
+                <select name="subject" class="form-control mx-auto w-auto" required>
+                    <option disabled selected>Subject</option>
+                    {% for subject in subjects %}
+                        <option value="{{ subject }}">{{ subject }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="requirements" placeholder="Materials Required" type="text" required>
+            </div>
+            <div class="mb-3">
+                <textarea name="description" placeholder="Description" for="form"></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="deadline" placeholder="Deadline" type="date">
+            </div>
+            <button class="btn btn-primary" type="submit">Add Homework</button>
+        </form>
+    </div>
+{% endblock %}

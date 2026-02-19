@@ -1,0 +1,18 @@
+// {
+// 	"folders": [
+// 		{
+// 			"path": "../../../.."
+// 		},
+// 		{
+// 			"path": "../../../../../../VSSSCODE/CS50AI"
+// 		}
+// 	],
+// 	"settings": {
+// 		"files.associations": {
+// 			"string": "c",
+// 			"array": "c",
+// 			"type_traits": "c",
+// 			"algorithm": "c"
+// 		}
+// 	}
+// }

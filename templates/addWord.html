@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Homework
+{% endblock %}
+
+{% block main %}
+    <br>
+    <h1 style="color:white;font-size: 4vw;">Add a W🤓rd Manually</h1>
+    
+    <h3 style="color:white;font-size: 2vw;">Enter the word manually</h3>
+    <br>
+    <div>
+
+       <form action="/addWord" method="post" id="form">
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="word" placeholder="Word" type="text" required>
+            </div>
+            <div class="mb-3">
+                <select name="part" class="form-control mx-auto w-auto" required>
+                    <option disabled selected>Part Of Speech</option>
+                    {% for part in parts %}
+                        <option value="{{ part }}">{{ part }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <!-- <input class="form-control mx-auto w-auto" autocomplete="off" name="definition" placeholder="Definition" type="text" required> -->
+                <textarea name="definition" placeholder="Definition" for="form"></textarea>
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="synonym" placeholder="Synonym" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="antonym" placeholder="Antonym" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="sample" placeholder="Sample Sentence" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Add The Word To The Vocabulary</button>
+        </form>
+    </div>
+{% endblock %}

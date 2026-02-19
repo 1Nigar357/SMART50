@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Word
+{% endblock %}
+
+{% block main %}
+    <br>
+    <h1 style="color:white;font-size: 4vw;">Add a Word </h1>
+    <h1 style="color:white;font-size: 4vw;">From the Dictionary 🔍📖</h1>
+    
+    <h3 style="color:white;font-size: 2vw;">Enter the word</h3>
+    <br>
+    <div>
+       <form action="/addWordDict" method="post">
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="word" placeholder="Word" type="text" required>
+            </div>
+            <button class="btn btn-primary" type="submit">Add The Word To The Vocabulary</button>
+        </form>
+    </div>
+{% endblock %}

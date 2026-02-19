@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Homework
+{% endblock %}
+
+{% block main %}
+    <br>
+    <h1 style="color:white;font-size: 4vw;">School Account 🔐</h1>
+    
+    <h3 style="color:white;font-size: 2vw;">Enter the username and password you use for university websites</h3>
+    <br><br><br>
+    <br>
+    <div>
+       <form action="/changeSchoolAccount" method="post" id="form">        
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" autocomplete="off" name="password" placeholder="Password" type="password">
+            </div>
+            
+            <button class="btn btn-primary" type="submit">Change the account </button>
+        </form>
+    </div>
+{% endblock %}

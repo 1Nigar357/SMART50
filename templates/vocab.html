@@ -1,0 +1,94 @@
+{% extends "layout.html"%}
+
+{% block title %}
+    Vocabulary
+{% endblock %}
+
+
+{% block main %}
+    <main class="container py-5 text-center" style="overflow-x:auto;">
+        <h1><mark class="bg-primary"> Vocabulary </mark></h1>
+        <br>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            {% for each in vocab %}
+                <div class="col">
+                    <div class="card h-100 text-start">
+                        <div class="card-header bg-primary text-start">
+                            <h2 class="ps-3">{{ each["word"]}}</h2>
+                            <span class=" ps-3 pe-1 fs-6 text-white"><i>{{ each["part"]}}</i></span>
+                          </div>
+                          <ul class="list-group list-group-flush ps-3 pe-3">
+                            <li class="list-group-item">
+                                <ol>
+                                    <li>{{ each["definition"] }}</li>
+                                    {% if each["d1"] %}
+                                    <li>{{ each["d1"] }}</li>
+                                    {% endif %}
+                                    {% if each["d2"] %}
+                                    <li>{{ each["d2"] }}</li>
+                                    {% endif %}
+                                    {% if each["d3"] %}
+                                    <li>{{ each["d3"] }}</li>
+                                    {% endif %}
+                                    {% if each["d4"] %}
+                                    <li>{{ each["d4"] }}</li>
+                                    {% endif %}
+                                    {% if each["d5"] %}
+                                    <li>{{ each["d5"] }}</li>
+                                    {% endif %}
+                                    {% if each["d6"] %}
+                                    <li>{{ each["d6"] }}</li>
+                                    {% endif %}
+                                    {% if each["d7"] %}
+                                    <li>{{ each["d7"] }}</li>
+                                    {% endif %}
+                                    {% if each["d8"] %}
+                                    <li>{{ each["d8"] }}</li>
+                                    {% endif %}
+                                    {% if each["d9"] %}
+                                    <li>{{ each["d9"] }}</li>
+                                    {% endif %}
+                                    {% if each["d10"] %}
+                                    <li>{{ each["d10"] }}</li>
+                                    {% endif %}
+                                    {% if each["d11"] %}
+                                    <li>{{ each["d11"] }}</li>
+                                    {% endif %}
+                                </ol>
+                            </li>
+                            {% if each["synonym"] %}
+                                <li class="list-group-item">
+                                    <h3>Synonym(s):</h3>{{ each["synonym"]}}
+                                </li>
+                            {% endif %}
+                            {% if each["antonym"] %}
+                            <li class="list-group-item">
+                                <h3>Antonym(s):</h3>
+                                {{ each["antonym"] }}
+                            </li>
+                            {% endif %}
+                            {% if each["sample"] %}
+                            <li class="list-group-item">
+                                <h3>Sample Sentence(s):</h3>
+                                "{{ each["sample"] }}"
+                            </li>
+                            {% endif %}
+                            <li class="list-group-item text-center">
+                                <form action="/delete" method="post">
+                                    <input name="id" value="{{ each['id'] }}" type="hidden">
+                                    <button class="btn btn-danger" type="submit"> &#128465; </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                  </div>
+            {% endfor %}
+         </div>
+        <br>
+        <a class="btn btn-primary" href="addWord" role="button">Add A Word Manually</a>
+        <a class="btn btn-primary" href="addWordDict" role="button">Add A Word From The Dictionary</a>
+
+
+
+    </main>
+{% endblock %}
