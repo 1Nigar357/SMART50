@@ -2,6 +2,8 @@
 #### Video Demo: https://youtu.be/yxg3NAgxW8k
 #### Description:
 
+<img width="2704" height="1466" alt="image" src="https://github.com/user-attachments/assets/41bf3de0-8f6c-42c3-81df-92e9f16ce5cc" />
+
 # General Info About The Website
 
     SMART50 is designed to help students organize their schoolwork. Students can organize their homework and create a virtual
